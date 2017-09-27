@@ -1,0 +1,84 @@
+dcterms:identifier|dcterms:type|dcterms:hasPart|dcterms:title|rdfs:label|dcterms:description|dcterms:conformsTo|rdfs:range|crowds:derivedAnnoBodyFormat|crowds:derivedAnnoBodyLabelParts|crowds:derivedAnnoBodyPurpose|crowds:derivedAnnoBodyType|crowds:derivedAnnoCombine|crowds:derivedAnnoExternalize|crowds:derivedAnnoHumanReadable|crowds:derivedAnnoMotivatedBy|crowds:derivedAnnoSerialize|crowds:externalResourceModel|crowds:uiChoice|crowds:uiComponent|crowds:uiFormGroup|crowds:uiGroup|crowds:uiHidden|crowds:uiInputDefaultValue|crowds:uiInputOptions|crowds:uiInputType|crowds:uiMultiple|crowds:uiRequired|crowds:uiSelectorType|crowds:uiSelectorValue
+1|madoc:group|2;3;4;5;6|IDA|IDA:Top Level|IDA Tagging model|||text/plain|||oa:TextualBody|TRUE|FALSE|FALSE|oa:tagging|TRUE|||resource||madoc:form|||||TRUE||madoc:boxdraw|
+2|madoc:group|300;301;302;303;304;305;306;307;308;309;310;311;312;313;314;315;316;317;318;319;320;321;322|Person|entity:person|IDA Person model|||text/plain|schema:name||oa:TextualBody|TRUE|TRUE|FALSE|oa:tagging|TRUE|http://omeka.dlcs-ida.org/api/resource_templates/4||tagging||madoc:form|||||TRUE||madoc:boxdraw|
+3|madoc:group|323;324;325;326;327;328;329;330;331;332;333;334;335;336|School|entity:school|IDA School model|||text/plain|schema:name||oa:TextualBody|TRUE|TRUE|FALSE|oa:tagging|TRUE|http://omeka.dlcs-ida.org/api/resource_templates/5||tagging||madoc:form|||||TRUE||madoc:boxdraw|
+4|madoc:group|337;338;339;340;341;342;343;344;345;346;347;348;349;350|Organization|entity:organization|IDA Organization model|||text/plain|schema:name||oa:TextualBody|TRUE|TRUE|FALSE|oa:tagging|TRUE|http://omeka.dlcs-ida.org/api/resource_templates/7||tagging||madoc:form|||||TRUE||madoc:boxdraw|
+5|madoc:group|351;352;353;354;355;356;357;358;359|Tribe|entity:tribe|IDA Tribe model|||text/plain|schema:name||oa:TextualBody|TRUE|TRUE|FALSE|oa:tagging|TRUE|http://omeka.dlcs-ida.org/api/resource_templates/6||tagging||madoc:form|||||TRUE||madoc:boxdraw|
+6|madoc:group|360;363;362;363;364;365;366;367;368;369;370;371;372;372;373;374;375;376|Place|entity:place|IDA Place model|||text/plain|schema:name||oa:TextualBody|TRUE|TRUE|FALSE|oa:tagging|TRUE|http://omeka.dlcs-ida.org/api/resource_templates/8||tagging||madoc:form|||||TRUE||madoc:boxdraw|
+300|madoc:element||Title|Title||dcterms:title||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+301|madoc:element||Description|Description||dcterms:description||text/plain||oa:tagging|||||||||||||||madox:textarea||||
+302|madoc:element||Name|Name||schema:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+303|madoc:element||alternateName|Alternate Name||schema:alternateName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+304|madoc:element||additionalName|Additional Name||schema:additionalName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+305|madoc:element||memberOf|Member of (Organization)||schema:memberOf||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+306|madoc:element||affiliation|Affiliated with (Organization)||schema:affiliation||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+307|madoc:element||birthDate|Date of Birth||schema:birthDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+308|madoc:element||birthPlace|Place of Birth||schema:birthPlace||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+309|madoc:element||deathDate|Date of Death||schema:deathDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+310|madoc:element||deathPlace|Place of Death||schema:deathPlace||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+311|madoc:element||gender|Gender||schema:gender||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+312|madoc:element||children|Children||schema:children||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+313|madoc:element||parent|Parent||schema:parent||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+314|madoc:element||sibling|Sibling||schema:sibling||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+315|madoc:element||relatedTo|Related To||schema:relatedTo||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+316|madoc:element||spouse|Spouse||schema:spouse||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+317|madoc:element||employee|Employee of||schema:employee||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+318|madoc:element||mainEntityOfPage|Topic Page URI||schema:mainEntityOfPage||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+319|madoc:element||additionalType|Additional Type||schema:additionalType||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+320|madoc:element||sameAs|Same person as||schema:sameAs||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+321|madoc:element||relatedLink|Related link||schema:relatedLink||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+322|madoc:element||label|label||rdfs:label||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+323|madoc:element||Title|Title (of School)||dcterms:title||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+324|madoc:element||Description|Description (of School)||dcterms:description||text/plain||oa:tagging|||||||||||||||madox:textarea||||
+325|madoc:element||Name|Name (of School)||schema:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+326|madoc:element||alternateName|Alternate Name (of School)||schema:alternateName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+327|madoc:element||location|Location (of School)||schema:location||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+328|madoc:element||address|Address (of School)||schema:address||text/plain||oa:tagging|||||||||||||||madoc:textarea||||
+329|madoc:element||areaServed|Area Served (by School)||schema:areaServed||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+330|madoc:element||foundingDate|Date of Founding||schema:foundingDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+331|madoc:element||foundingLocation|Location of Founding||schema:foundingLocation||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+332|madoc:element||dissolutionDate|Date of Dissolution||schema:dissolutionDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+333|madoc:element||mainEntityOfPage|Topic Page URI||schema:mainEntityOfPage||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+334|madoc:element||additionalType|Additional Type||schema:additionalType||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+335|madoc:element||relatedLink|Related link||schema:relatedLink||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+336|madoc:element||label|label||rdfs:label||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+337|madoc:element||Title|Title (of Organization)||dcterms:title||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+338|madoc:element||Description|Description (of Organization)||dcterms:description||text/plain||oa:tagging|||||||||||||||madox:textarea||||
+339|madoc:element||Name|Name (of Organization)||schema:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+340|madoc:element||alternateName|Alternate Name (of Organization)||schema:alternateName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+341|madoc:element||location|Location (of Organization)||schema:location||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+342|madoc:element||address|Address (of Organization)||schema:address||text/plain||oa:tagging|||||||||||||||madoc:textarea||||
+343|madoc:element||areaServed|Area Served by Organization||schema:areaServed||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+344|madoc:element||foundingDate|Date of Founding||schema:foundingDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+345|madoc:element||foundingLocation|Location of Founding||schema:foundingLocation||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+346|madoc:element||dissolutionDate|Date of Dissolution||schema:dissolutionDate|http://schema.org/Date|text/plain||oa:tagging|||||||||||||||madoc:datepicker||||
+347|madoc:element||mainEntityOfPage|Topic Page URI||schema:mainEntityOfPage||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+348|madoc:element||additionalType|Additional Type||schema:additionalType||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+349|madoc:element||relatedLink|Related link||schema:relatedLink||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+350|madoc:element||label|label||rdfs:label||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+351|madoc:element||Title|Title of Tribe||dcterms:title||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+352|madoc:element||Description|Description of Tribe||dcterms:description||text/plain||oa:tagging|||||||||||||||madox:textarea||||
+353|madoc:element||Name|Primary name of Tribe||schema:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+354|madoc:element||alternateName|Alternate Name for Tribe||schema:alternateName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+355|madoc:element||location|Location of Tribe||schema:location||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+356|madoc:element||additionalType|Additional Type||schema:additionalType||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+357|madoc:element||relatedLink|Related link||schema:relatedLink||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+358|madoc:element||label|label||rdfs:label||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+359|madoc:element||mainEntityOfPage|Topic Page URI||schema:mainEntityOfPage||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+360|madoc:element||Title|Title of Place||dcterms:title||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+361|madoc:element||Description|Description of Place||dcterms:description||text/plain||oa:tagging|||||||||||||||madox:textarea||||
+362|madoc:element||address|Place Address||schema:address||text/plain||oa:tagging|||||||||||||||madoc:textarea||||
+363|madoc:element||addressCountry|Country (of Place)||schema:addressCountry||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+364|madoc:element||addressRegion|Region (of Place)||schema:addressRegion||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+365|madoc:element||addressLocality|Locality (of Place)||schema:addressLocality||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+366|madoc:element||location|Location (of Place)||schema:location||text/plain||oa:tagging|||||||||||||||madoc:mappicker||||
+367|madoc:element||Name|Primary name (of Place)||schema:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+368|madoc:element||alternateName|Alternate Name (of Place)||schema:alternateName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+369|madoc:element||colloquial name|Colloquial Name (of Place)||gn:colloquialName||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+370|madoc:element||latitude|Latitude||schema:latitude||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+371|madoc:element||longitude|Longitude||schema:longitude||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+372|madoc:element||feature class|Goenames Feature Class||gn:featureClass||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+373|madoc:element||feature code|Geonames Feature Code||gn:featureCode||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+374|madoc:element||geonamesName|Geonames Name||gn:name||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+375|madoc:element||geonames identifier|Geonames Identifier||gn:geonamesID||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
+376|madoc:element||map|Geonames Map||gn:locationMap||text/plain||oa:tagging|||||||||||||||madoc:textbox||||
