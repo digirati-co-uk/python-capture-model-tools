@@ -96,7 +96,11 @@ def expand_dct(dct, sanitise=True, pair=False):
         expanded = generate_expanded(value=v)
         if expanded:
             if pair:
-                dct[k] = {'@id': expanded, 'o:label': v}
+                # temp fix for anno studio issue
+                if k == 'crowds:uiGroup':
+                    dct[k] = {'@id': v, 'o:label': v}
+                else:
+                    dct[k] = {'@id': expanded, 'o:label': v}
             else:
                 dct[k] = expanded
                 label_key = k + '_label'
