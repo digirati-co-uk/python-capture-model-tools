@@ -96,7 +96,8 @@ def expand_dct(dct, sanitise=True, pair=False):
         expanded = generate_expanded(value=v)
         if k == 'crowds:uiInputOptions':
             # json.dumps([x.strip() for x in dct['crowds:uiInputOptions'].split(';')])
-            dct[k] = [opt.strip() for opt in v.split(';')]
+            if ';' in dct[k]:
+                dct[k] = [opt.strip() for opt in v.split(';')]
         if expanded:
             if pair:
                 # temp fix for anno studio issue
