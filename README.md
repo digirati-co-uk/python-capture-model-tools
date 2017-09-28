@@ -37,6 +37,59 @@ virtualenv .
 pip install -r requirements.txt
 ```
 
+Howver, they can be installed outside a Virtualenv.
+
+```bash
+git clone https://github.com/digirati-co-uk/python-capture-model-tools.git
+cd python-capture-model-tools
+pip install -r requirements.txt
+```
 
 # Usage
+
+The capture model tools can be run on the commandline, with commandline arguments passed in. The arguments are as follows:
+
+```
+ '-i', '--input', help='Input CSV file name', required=True
+ '-o', '--output', help='Output JSON file name', required=True
+ '-b', '--url_base', help='Base url for the Omeka instance', required=False
+ '-t', '--top_index', help='Numbered element to treat as the top level group', required=False
+ '-g', '--group_id', help='ID for the Crowd Source Group resource template', required=False
+ '-e', '--element_id', help='ID for the Crowd Source Element resource template', required=False
+ '-c', '--irclass', help='ID for the Interactive Resource class', required=False
+ '-u', '--user', help='Omeka User ID for the Owner', required=False
+ '-x', '--context', help='IDA Context', required=False
+```
+
+### Input
+
+The tool expects a pipe-delimited '|' file, with column heads as per `template.csv` provided as part of this repo.
+
+e.g.
+
+`-i gle.csv`
+
+### Output
+
+The tool will produce a JSON-LD document.
+
+e.g.
+
+`-o gle.json`
+
+### URL Base
+
+The JSON-LD uses the address of the server where the model will be deployed throughout, to ensure correct `@id`s that will resolve.
+
+e.g. for NLW: 
+
+`-b http://nlw-omeka.digtest.co.uk`
+
+### Top Index
+
+The CSV should use numbered identifiers in each row, under the `dcterms:identifier` column.
+
+`-t 1`
+
+tells the tool to start building the model with the row numbered `1`.
 
