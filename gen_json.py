@@ -126,8 +126,6 @@ def template_element(dct, url, elem_t, irc_t, u_t):
     :param dct: dictionary to process
     :return: parsed and expanded data as Python object
     """
-    if dct['crowds:uiInputOptions']:  # for drop-downs.
-        dct['crowds:uiInputOptions'] = json.dumps([x.strip() for x in dct['crowds:uiInputOptions'].split(';')])
     dct['@id'] = url + '/api/items/' + dct['dcterms:identifier']
     dct['o:id'] = dct['dcterms:identifier']
     dct['@type'] = ['o:Item', 'dctype:InteractiveResource']
@@ -143,6 +141,22 @@ def template_element(dct, url, elem_t, irc_t, u_t):
                                'o:id': irc_t}
     dct['o:resource_template'] = {'@id': url + '/api/resource_templates/' + elem_t,
                                   'o:id': elem_t}
+    # Set default Boolean values:
+    default_booleans = {
+                        'crowds:uiHidden': 'FALSE'
+                        }
+    for k, _ in default_booleans.items():
+        if k in dct:
+            if dct[k] not in ['FALSE', 'TRUE']:
+                dct[k] = default_booleans[k]
+    default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
+                      'crowds:derivedAnnoBodyType': 'oa:TextualBody',
+                      'crowds:derivedAnnoBodyFormat': 'text/plain'
+                      }
+    for k, _ in default_values.items():
+        if k in dct:
+            if not dct[k]:
+                dct[k] = default_values[k]
     return expand_dct(dct, sanitise=False, pair=True)
 
 
@@ -174,7 +188,30 @@ def template_group(dct, url, grp_t, irc_t, u_t, nlw_c, ida_c):
                                'o:id': irc_t}
     dct['o:resource_template'] = {'@id': url + '/api/resource_templates/' + grp_t,
                                   'o:id': grp_t}
-    dct['group_t'] = grp_t
+    # Set default Boolean values:
+    default_booleans = {'crowds:uiChoice': 'FALSE',
+                        'crowds:uiMultiple': 'TRUE',
+                        'crowds:derivedAnnoCombine': 'TRUE',
+                        'crowds:derivedAnnoExternalize': 'FALSE',
+                        'crowds:derivedAnnoHumanReadable': 'FALSE',
+                        'crowds:derivedAnnoSerialize': 'TRUE',
+                        'crowds:uiHidden': 'FALSE'
+                        }
+    for k, _ in default_booleans.items():
+        if k in dct:
+            if dct[k] not in ['FALSE', 'TRUE']:
+                dct[k] = default_booleans[k]
+    default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
+                      'crowds:derivedAnnoBodyType': 'oa:TextualBody',
+                      'crowds:derivedAnnoMotivatedBy': 'oa:tagging',
+                      'crowds:uiComponent': 'resource',
+                      'crowds:uiGroup': 'madoc:form',
+                      'crowds:derivedAnnoBodyFormat': 'text/plain'
+                      }
+    for k, _ in default_values.items():
+        if k in dct:
+            if not dct[k]:
+                dct[k] = default_values[k]
     if nlw_c:
         with open('nlw_context.json', 'r') as context_file:
             dct['@context'] = json.load(context_file)['@context']
@@ -182,7 +219,7 @@ def template_group(dct, url, grp_t, irc_t, u_t, nlw_c, ida_c):
         with open('ida_context.json', 'r') as context_file:
             dct['@context'] = json.load(context_file)['@context']
     else:
-        with open('ida_context.json', 'r') as context_file:
+        with open('nlw_context.json', 'r') as context_file:
             dct['@context'] = json.load(context_file)['@context']
     return expand_dct(dct, sanitise=False, pair=True)
 
