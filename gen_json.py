@@ -94,6 +94,9 @@ def expand_dct(dct, sanitise=True, pair=False):
     """
     for k, v in dct.items():
         expanded = generate_expanded(value=v)
+        if k == 'crowds:uiInputOptions':
+            # json.dumps([x.strip() for x in dct['crowds:uiInputOptions'].split(';')])
+            dct[k] = [opt.strip() for opt in v.split(';')]
         if expanded:
             if pair:
                 # temp fix for anno studio issue
@@ -308,7 +311,9 @@ def main():
 
     Or, to generate the WW1 capture model, as JSON:
 
-        python gen_json.py -i nlw_ww1.csv -o nlw_ww1.json -b http://nlw-omeka.digtest.co.uk -t 2
+        python gen_json.py -i nlw_ww1.csv -o nlw_ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
+
+        python gen_json.py -i gle.csv -o gle.json -u 2 -t 1 -c 27 -g 5 -e 4 -u 3
 
     IDA model:
 
