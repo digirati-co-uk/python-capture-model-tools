@@ -352,7 +352,7 @@ def main():
 
     Or, to generate the WW1 capture model, as JSON:
 
-        python gen_json.py -i nlw_ww1.csv -o nlw_ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
+        python gen_json.py -i ww1.csv -o ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
 
         python gen_json.py -i gle.csv -o gle.json -u 2 -t 1 -c 27 -g 5 -e 4 -u 3
 
