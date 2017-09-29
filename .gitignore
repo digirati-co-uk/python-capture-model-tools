@@ -102,3 +102,4 @@ ENV/
 /pip-selfcheck.json
 /ida_new_test.json
 /.~lock.ida_master.csv#
+/.~lock.ww1.csv#
