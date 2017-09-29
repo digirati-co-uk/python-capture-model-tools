@@ -148,11 +148,13 @@ def template_element(dct, url, elem_t, irc_t, u_t):
                         }
     for k, _ in default_booleans.items():
         if k in dct:
-            if dct[k] not in ['FALSE', 'TRUE']:
+            if dct[k].upper() not in ['FALSE', 'TRUE']:
                 dct[k] = default_booleans[k]
+                dct[k] = dct[k].upper()
     default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
                       'crowds:derivedAnnoBodyType': 'oa:TextualBody',
-                      'crowds:derivedAnnoBodyFormat': 'text/plain'
+                      'crowds:derivedAnnoBodyFormat': 'text/plain',
+                      'crowds:uiInputType': 'madoc:textbox'
                       }
     for k, _ in default_values.items():
         if k in dct:
@@ -200,8 +202,9 @@ def template_group(dct, url, grp_t, irc_t, u_t, nlw_c, ida_c):
                         }
     for k, _ in default_booleans.items():
         if k in dct:
-            if dct[k] not in ['FALSE', 'TRUE']:
+            if dct[k].upper() not in ['FALSE', 'TRUE']:
                 dct[k] = default_booleans[k]
+                dct[k] = dct[k].upper()
     default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
                       'crowds:derivedAnnoBodyType': 'oa:TextualBody',
                       'crowds:derivedAnnoMotivatedBy': 'oa:tagging',
