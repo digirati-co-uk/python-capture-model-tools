@@ -101,7 +101,7 @@ def expand_dct(dct, sanitise=True, pair=False):
         if expanded:
             if pair:
                 # temp fix for anno studio issue
-                if k == 'crowds:uiGroup':
+                if k in ['crowds:uiGroup', 'crowds:uiInputType', 'crowds:uiSelectorType']:
                     dct[k] = {'@id': v, 'o:label': v}
                 else:
                     dct[k] = {'@id': expanded, 'o:label': v}
