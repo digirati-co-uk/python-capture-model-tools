@@ -101,7 +101,7 @@ def expand_dct(dct, sanitise=True, pair=False):
         if expanded:
             if pair:
                 # temp fix for anno studio issue
-                if k == 'crowds:uiGroup':
+                if k in ['crowds:uiGroup', 'crowds:uiInputType', 'crowds:uiSelectorType']:
                     dct[k] = {'@id': v, 'o:label': v}
                 else:
                     dct[k] = {'@id': expanded, 'o:label': v}
@@ -148,7 +148,7 @@ def template_element(dct, url, elem_t, irc_t, u_t):
                         }
     for k, _ in default_booleans.items():
         if k in dct:
-            if dct[k] not in ['FALSE', 'TRUE']:
+            if dct[k].upper() not in ['FALSE', 'TRUE']:
                 dct[k] = default_booleans[k]
     default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
                       'crowds:derivedAnnoBodyType': 'oa:TextualBody',
@@ -200,7 +200,7 @@ def template_group(dct, url, grp_t, irc_t, u_t, nlw_c, ida_c):
                         }
     for k, _ in default_booleans.items():
         if k in dct:
-            if dct[k] not in ['FALSE', 'TRUE']:
+            if dct[k].upper() not in ['FALSE', 'TRUE']:
                 dct[k] = default_booleans[k]
     default_values = {'crowds:derivedAnnoBodyPurpose': 'oa:tagging',
                       'crowds:derivedAnnoBodyType': 'oa:TextualBody',
@@ -349,7 +349,7 @@ def main():
 
     Or, to generate the WW1 capture model, as JSON:
 
-        python gen_json.py -i nlw_ww1.csv -o nlw_ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
+        python gen_json.py -i ww1.csv -o ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
 
         python gen_json.py -i gle.csv -o gle.json -u 2 -t 1 -c 27 -g 5 -e 4 -u 3
 
