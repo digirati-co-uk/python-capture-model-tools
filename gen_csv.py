@@ -5,11 +5,15 @@ import ontospy
 import requests
 from pyld import jsonld
 
-# import unicodecsv as csv
+import unicodecsv as csv
 
 # global context document
 with open('context.json', 'r') as context_file:
     master_context = json.load(context_file)
+    del(master_context['@context']['dct'])  # remove unwanted alternative dcterms 'dct' prefix
+    del(master_context['@context']['dcterm'])  # unwanted alternative dcterms 'dcterm' prefix
+    del(master_context['@context']['sdo'])  # unwanted alternative schema.org prefix
+    del(master_context['@context']['sorg'])  # unwanted alternative schema.org prefix
 
 
 def initialise():
@@ -52,7 +56,7 @@ def get_model(uri):
         return None
 
 
-def parse_field(field_key, field_value):
+def parse_field(field_key, field_value, dw):
     """
     Return a field as a key/value pair, normalising the keys to qnames, and the value to a single value,
     based on the o:id, @id and o:label, in that order.
@@ -62,13 +66,19 @@ def parse_field(field_key, field_value):
     :param field_key:
     :return:
     """
+    # if field_key == u'o:id':
+    #     return 'dcterms:identifier', field_value  # don't try to compact @ids
     if field_key == '@id':
-        return field_value, field_value  # don't try to compact @ids
+        return None, None
     # compact using master context to reduce to qnames
     ck = jsonld.compact({field_key: field_value}, master_context)
     del (ck['@context'])  # remove the context
-    if any(ck):
+    if ck:
         for k, v in ck.items():
+            if k == 'dcterms:hasPart':
+                for z in v:
+                    parse_expanded([z], dw)
+                return k, ';'.join([y['dcterms:identifier'] for y in v])
             if isinstance(v, dict):
                 for x in ['o:id', '@id', 'o:label']:
                     if x in v:
@@ -78,7 +88,7 @@ def parse_field(field_key, field_value):
                 return k, v
 
 
-def parse_expanded(model):
+def parse_expanded(model, dw):
     """
     Parse and expanded capture model and generate dicts suitable for writing to CSV rows.
     :param model: expanded JSON-LD
@@ -88,10 +98,10 @@ def parse_expanded(model):
     for item in model:
         for k, v in item.items():
             if k and v:
-                parsed_key, parsed_value = parse_field(k, v)
-                if parsed_key in master_dict:
+                parsed_key, parsed_value = parse_field(k, v, dw)
+                if parsed_key in master_dict.keys():
                     master_dict[parsed_key] = parsed_value
-        return master_dict
+        dw.writerow(master_dict)
 
 
 def main():
@@ -99,10 +109,16 @@ def main():
     Test/working function
     :return:
     """
-    capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
-    capture_model['@context'] = master_context
-    expanded = jsonld.expand(capture_model)
-    print(parse_expanded(expanded))
+    all_fields = initialise()
+    csv_file = 'test_out.csv'
+    with open(csv_file, 'w') as csv_out:
+        dw = csv.DictWriter(
+            csv_out, delimiter='|', fieldnames=all_fields)
+        dw.writeheader()
+        capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
+        capture_model['@context'] = master_context
+        expanded = jsonld.expand(capture_model)
+        parse_expanded(expanded, dw)
 
 
 if __name__ == "__main__":
