@@ -101,6 +101,7 @@ def parse_expanded(model, dw):
                 parsed_key, parsed_value = parse_field(k, v, dw)
                 if parsed_key in master_dict.keys():
                     master_dict[parsed_key] = parsed_value
+        print(json.dumps(master_dict, indent=2))
         dw.writerow(master_dict)
 
 
@@ -116,7 +117,8 @@ def main():
             csv_out, delimiter='|', fieldnames=all_fields)
         dw.writeheader()
         # get the capture model
-        capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
+        # capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
+        capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/war-tribunal-records/annotation-studio/open/resource')
         capture_model['@context'] = master_context  # change to context with additional namespaces
         expanded = jsonld.expand(capture_model)  # expand the JSON-LD
         parse_expanded(expanded, dw)  # recursively parse the expanded JSON-LD.
