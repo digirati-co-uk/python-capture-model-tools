@@ -109,16 +109,17 @@ def main():
     Test/working function
     :return:
     """
-    all_fields = initialise()
+    all_fields = initialise()  # ordered dict of field names in CSV
     csv_file = 'test_out.csv'
-    with open(csv_file, 'w') as csv_out:
+    with open(csv_file, 'w') as csv_out:  # open CSV and write header row
         dw = csv.DictWriter(
             csv_out, delimiter='|', fieldnames=all_fields)
         dw.writeheader()
+        # get the capture model
         capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
-        capture_model['@context'] = master_context
-        expanded = jsonld.expand(capture_model)
-        parse_expanded(expanded, dw)
+        capture_model['@context'] = master_context  # change to context with additional namespaces
+        expanded = jsonld.expand(capture_model)  # expand the JSON-LD
+        parse_expanded(expanded, dw)  # recursively parse the expanded JSON-LD.
 
 
 if __name__ == "__main__":
