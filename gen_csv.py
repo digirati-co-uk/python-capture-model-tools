@@ -5,6 +5,7 @@ import ontospy
 import requests
 import argparse
 from pyld import jsonld
+from operator import itemgetter
 
 
 import unicodecsv as csv
@@ -58,7 +59,7 @@ def get_model(uri):
         return None
 
 
-def parse_field(field_key, field_value, dw):
+def parse_field(field_key, field_value, r_list):
     """
     Return a field as a key/value pair, normalising the keys to qnames, and the value to a single value,
     based on the o:id, @id and o:label, in that order.
@@ -66,6 +67,7 @@ def parse_field(field_key, field_value, dw):
     Return None, None for fields that don't fit this pattern.
     :param field_value:
     :param field_key:
+    :param r_list:
     :return:
     """
     # if field_key == u'o:id':
@@ -79,7 +81,7 @@ def parse_field(field_key, field_value, dw):
         for k, v in ck.items():
             if k == 'dcterms:hasPart':
                 for z in v:
-                    parse_expanded([z], dw)
+                    parse_expanded([z], row_list=r_list)
                 return k, ';'.join([y['dcterms:identifier'] for y in v])
             if isinstance(v, dict):
                 for x in ['o:id', '@id', 'o:label']:
@@ -90,7 +92,7 @@ def parse_field(field_key, field_value, dw):
                 return k, v
 
 
-def parse_expanded(model, dw):
+def parse_expanded(model, row_list):
     """
     Parse and expanded capture model and generate dicts suitable for writing to CSV rows.
     :param model: expanded JSON-LD
@@ -100,11 +102,13 @@ def parse_expanded(model, dw):
     for item in model:
         for k, v in item.items():
             if k and v:
-                parsed_key, parsed_value = parse_field(k, v, dw)
+                parsed_key, parsed_value = parse_field(field_key=k, field_value=v, r_list=row_list)
                 if parsed_key in master_dict.keys():
                     master_dict[parsed_key] = parsed_value
         print(json.dumps(master_dict, indent=2))
-        dw.writerow(master_dict)
+        #dw.writerow(master_dict)
+        row_list.append(master_dict)
+    return row_list
 
 
 def csv_generate(csv_filename, capturemodel_uri, delimiter='|'):
@@ -130,7 +134,11 @@ def csv_generate(csv_filename, capturemodel_uri, delimiter='|'):
         capture_model = get_model(capturemodel_uri)
         capture_model['@context'] = master_context  # change to context with additional namespaces
         expanded = jsonld.expand(capture_model)  # expand the JSON-LD
-        parse_expanded(expanded, dw)  # recursively parse the expanded JSON-LD.
+        # recursively parse the expanded JSON-LD, returning a sorted list of dictionaries
+        dw_list = sorted(parse_expanded(expanded, row_list=[]), key=itemgetter('dcterms:identifier'))
+        for d in dw_list:
+            dw.writerow(d)
+
 
 
 def main():
