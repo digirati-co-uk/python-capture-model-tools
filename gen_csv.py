@@ -1,9 +1,11 @@
 import json
 from collections import OrderedDict
-
+import logging
 import ontospy
 import requests
+import argparse
 from pyld import jsonld
+
 
 import unicodecsv as csv
 
@@ -105,23 +107,52 @@ def parse_expanded(model, dw):
         dw.writerow(master_dict)
 
 
-def main():
+def csv_generate(csv_filename, capturemodel_uri, delimiter='|'):
     """
-    Test/working function
-    :return:
+    Generate a CSV from a JSON uri.
+
+    Example URIs:
+
+    NLW WW1: 'http://nlw-omeka.digtest.co.uk/s/war-tribunal-records/annotation-studio/open/resource'
+    NLW GLE: 'http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource'
+    IDA: https://omeka.dlcs-ida.org/s/ida/annotation-studio/open/tagging
+
+    :param csv_filename: output filename
+    :param capturemodel_uri: uri for capturemodel json
+    :param delimiter: delimiter for CSV
     """
-    all_fields = initialise()  # ordered dict of field names in CSV
-    csv_file = 'test_out.csv'
-    with open(csv_file, 'w') as csv_out:  # open CSV and write header row
+    all_fields = initialise()
+    with open(csv_filename, 'w') as csv_out:  # open CSV and write header row
         dw = csv.DictWriter(
-            csv_out, delimiter='|', fieldnames=all_fields)
+            csv_out, delimiter=delimiter, fieldnames=all_fields)
         dw.writeheader()
         # get the capture model
-        # capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource')
-        capture_model = get_model('http://nlw-omeka.digtest.co.uk/s/war-tribunal-records/annotation-studio/open/resource')
+        capture_model = get_model(capturemodel_uri)
         capture_model['@context'] = master_context  # change to context with additional namespaces
         expanded = jsonld.expand(capture_model)  # expand the JSON-LD
         parse_expanded(expanded, dw)  # recursively parse the expanded JSON-LD.
+
+
+def main():
+    """
+    Wrapper for csv_generate.
+
+    Parse commandline args and convert capturemodel JSON from a URI to a CSV suitable for generating capture models
+    using gen_json.
+
+    JSON --> CSV
+    Usage:
+
+    python gen_csv -i http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource -o gle_export.csv
+    """
+    logging.basicConfig(filename='csv_generator.log', level=logging.DEBUG)
+    parser = argparse.ArgumentParser(description='Simple JSON to CSV tool for annotation studio capture models.')
+    parser.add_argument('-i', '--input', help='Input JSON uri', required=True)
+    parser.add_argument('-o', '--output', help='Output CSV file name', required=True)
+    parser.add_argument('-d', '--delimiter', help='CSV delimiter, defaults to |', required=False)
+    args = parser.parse_args()
+    if args.input and args.output:
+        csv_generate(csv_filename=args.output, capturemodel_uri=args.input)
 
 
 if __name__ == "__main__":
