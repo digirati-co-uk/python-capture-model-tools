@@ -1678,8 +1678,8 @@
                             "crowds:uiFormGroup": "Applicant details", 
                             "crowds:uiHidden": "False", 
                             "crowds:uiInputType": {
-                                "@id": "madoc:textarea", 
-                                "o:label": "madoc:textarea"
+                                "@id": "madoc:textbox", 
+                                "o:label": "madoc:textbox"
                             }, 
                             "crowds:uiSelectorType": "WholeCanvasSelector", 
                             "dcterms:conformsTo": {
@@ -2325,63 +2325,6 @@
                     "dcterms:description": "Includes the title 'Notice of Appeal' and R43 or R44 in the header", 
                     "dcterms:hasPart": [
                         {
-                            "@id": "http://nlw-omeka.digtest.co.uk/api/items/6", 
-                            "@type": [
-                                "o:Item", 
-                                "dctype:InteractiveResource"
-                            ], 
-                            "crowds:derivedAnnoBodyFormat": "text/plain", 
-                            "crowds:derivedAnnoBodyPurpose": {
-                                "@id": "http://www.w3.org/ns/oa#identifying", 
-                                "o:label": "oa:identifying"
-                            }, 
-                            "crowds:derivedAnnoBodyType": "text/plain", 
-                            "crowds:derivedAnnoMotivatedBy": {
-                                "@id": "http://www.w3.org/ns/oa#tagging", 
-                                "o:label": "oa:tagging"
-                            }, 
-                            "crowds:uiFormGroup": "Personal details", 
-                            "crowds:uiHidden": "False", 
-                            "crowds:uiInputType": {
-                                "@id": "madoc:textbox", 
-                                "o:label": "madoc:textbox"
-                            }, 
-                            "crowds:uiSelectorType": "WholeCanvasSelector", 
-                            "dcterms:conformsTo": {
-                                "@id": "http://xmlns.com/foaf/0.1/age", 
-                                "o:label": "foaf:age"
-                            }, 
-                            "dcterms:identifier": "6", 
-                            "dcterms:title": "AgeLastBirthday", 
-                            "dcterms:type": {
-                                "@id": "http://www.digirati.com/ns/madoc#element", 
-                                "o:label": "madoc:element"
-                            }, 
-                            "o:id": "6", 
-                            "o:is_public": "true", 
-                            "o:modified": {
-                                "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
-                                "@value": "2017-06-28T09:21:30+00:00"
-                            }, 
-                            "o:owner": {
-                                "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
-                                "o:id": "3"
-                            }, 
-                            "o:resource_class": {
-                                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
-                                "o:id": "27"
-                            }, 
-                            "o:resource_template": {
-                                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
-                                "o:id": "4"
-                            }, 
-                            "rdfs:label": "Age", 
-                            "rdfs:range": {
-                                "@id": "http://www.w3.org/2001/XMLSchema#integer", 
-                                "o:label": "xsd:integer"
-                            }
-                        }, 
-                        {
                             "@id": "http://nlw-omeka.digtest.co.uk/api/items/54", 
                             "@type": [
                                 "o:Item", 
@@ -2733,6 +2676,63 @@
                                 "o:id": "4"
                             }, 
                             "rdfs:label": "Attested or not attested", 
+                            "rdfs:range": {
+                                "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
+                                "o:label": "rdfs:literal"
+                            }
+                        }, 
+                        {
+                            "@id": "http://nlw-omeka.digtest.co.uk/api/items/60", 
+                            "@type": [
+                                "o:Item", 
+                                "dctype:InteractiveResource"
+                            ], 
+                            "crowds:derivedAnnoBodyFormat": "text/plain", 
+                            "crowds:derivedAnnoBodyPurpose": {
+                                "@id": "http://www.w3.org/ns/oa#identifying", 
+                                "o:label": "oa:identifying"
+                            }, 
+                            "crowds:derivedAnnoBodyType": "text/plain", 
+                            "crowds:derivedAnnoMotivatedBy": {
+                                "@id": "http://www.w3.org/ns/oa#tagging", 
+                                "o:label": "oa:tagging"
+                            }, 
+                            "crowds:uiFormGroup": "Grounds", 
+                            "crowds:uiHidden": "False", 
+                            "crowds:uiInputType": {
+                                "@id": "madoc:textarea", 
+                                "o:label": "madoc:textarea"
+                            }, 
+                            "crowds:uiSelectorType": "WholeCanvasSelector", 
+                            "dcterms:conformsTo": {
+                                "@id": "http://ndl.go.jp/dcndl/terms/transcription", 
+                                "o:label": "dcndl:transcription"
+                            }, 
+                            "dcterms:identifier": "60", 
+                            "dcterms:title": "Grounds", 
+                            "dcterms:type": {
+                                "@id": "http://www.digirati.com/ns/madoc#element", 
+                                "o:label": "madoc:element"
+                            }, 
+                            "o:id": "60", 
+                            "o:is_public": "true", 
+                            "o:modified": {
+                                "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                                "@value": "2017-06-28T09:21:30+00:00"
+                            }, 
+                            "o:owner": {
+                                "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                                "o:id": "3"
+                            }, 
+                            "o:resource_class": {
+                                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                                "o:id": "27"
+                            }, 
+                            "o:resource_template": {
+                                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                                "o:id": "4"
+                            }, 
+                            "rdfs:label": "Grounds", 
                             "rdfs:range": {
                                 "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
                                 "o:label": "rdfs:literal"
@@ -4135,7 +4135,7 @@
                                 "@id": "http://www.w3.org/ns/oa#tagging", 
                                 "o:label": "oa:tagging"
                             }, 
-                            "crowds:uiFormGroup": "Attestation details ", 
+                            "crowds:uiFormGroup": "Personal details ", 
                             "crowds:uiHidden": "False", 
                             "crowds:uiInputType": {
                                 "@id": "madoc:textbox", 
@@ -7486,7 +7486,7 @@
                                 "o:label": "dcndl:transcription"
                             }, 
                             "dcterms:identifier": "153", 
-                            "dcterms:title": "Continued\u2026 ", 
+                            "dcterms:title": "Continued \u2026", 
                             "dcterms:type": {
                                 "@id": "http://www.digirati.com/ns/madoc#element", 
                                 "o:label": "madoc:element"
@@ -7509,7 +7509,7 @@
                                 "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
                                 "o:id": "4"
                             }, 
-                            "rdfs:label": "Continued\u2026 ", 
+                            "rdfs:label": "Continued \u2026", 
                             "rdfs:range": {
                                 "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
                                 "o:label": "rdfs:literal"
@@ -7534,8 +7534,8 @@
                             "crowds:uiFormGroup": "Previous application", 
                             "crowds:uiHidden": "False", 
                             "crowds:uiInputType": {
-                                "@id": "madoc:textbox", 
-                                "o:label": "madoc:textbox"
+                                "@id": "madoc:textarea", 
+                                "o:label": "madoc:textarea"
                             }, 
                             "crowds:uiSelectorType": "WholeCanvasSelector", 
                             "dcterms:conformsTo": {
@@ -7591,8 +7591,8 @@
                             "crowds:uiFormGroup": "Change of conditions or circumstances", 
                             "crowds:uiHidden": "False", 
                             "crowds:uiInputType": {
-                                "@id": "madoc:textbox", 
-                                "o:label": "madoc:textbox"
+                                "@id": "madoc:textarea", 
+                                "o:label": "madoc:textarea"
                             }, 
                             "crowds:uiSelectorType": "WholeCanvasSelector", 
                             "dcterms:conformsTo": {
