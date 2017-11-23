@@ -1,0 +1,262 @@
+{
+    "@context": {
+        "bibo": {
+            "@id": "http://purl.org/ontology/bibo/", 
+            "vocabulary_id": "3", 
+            "vocabulary_label": "Bibliographic Ontology"
+        }, 
+        "cnt": "http://www.w3.org/2011/content#", 
+        "crowds": {
+            "@id": "http://www.digirati.com/ns/crowds", 
+            "vocabulary_id": "15", 
+            "vocabulary_label": "Crowds: Crowd Source Vocabulary for defining capture models."
+        }, 
+        "dcterms": {
+            "@id": "http://purl.org/dc/terms/", 
+            "vocabulary_id": "1", 
+            "vocabulary_label": "Dublin Core"
+        }, 
+        "dctype": {
+            "@id": "http://purl.org/dc/dcmitype/", 
+            "vocabulary_id": "2", 
+            "vocabulary_label": "Dublin Core Type"
+        }, 
+        "doap": {
+            "@id": "http://usefulinc.com/ns/doap#", 
+            "vocabulary_id": "5", 
+            "vocabulary_label": "Description of a Project (DOAP) vocabulary"
+        }, 
+        "exif": {
+            "@id": "http://www.w3.org/2003/12/exif/ns", 
+            "vocabulary_id": "8", 
+            "vocabulary_label": "Vocabulary to describe an Exif format picture data."
+        }, 
+        "foaf": {
+            "@id": "http://xmlns.com/foaf/0.1/", 
+            "vocabulary_id": "4", 
+            "vocabulary_label": "Friend of a Friend"
+        }, 
+        "iiif": {
+            "@id": "http://iiif.io/api/image/2#", 
+            "vocabulary_id": "9", 
+            "vocabulary_label": "IIIF Image API Ontology"
+        }, 
+        "madoc": {
+            "@id": "http://www.digirati.com/ns/madoc#", 
+            "vocabulary_id": "18", 
+            "vocabulary_label": "Madoc: crowd source vocab for rendering UI"
+        }, 
+        "o": "http://omeka.org/s/vocabs/o#", 
+        "oa": {
+            "@id": "http://www.w3.org/ns/oa#", 
+            "vocabulary_id": "10", 
+            "vocabulary_label": "Open Annotation (oa prefix until update of Omeka)"
+        }, 
+        "rdfs": {
+            "@id": "http://www.w3.org/2000/01/rdf-schema", 
+            "vocabulary_id": "17", 
+            "vocabulary_label": "The RDF Schema vocabulary (RDFS)"
+        }, 
+        "sc": {
+            "@id": "http://iiif.io/api/presentation/2#", 
+            "vocabulary_id": "12", 
+            "vocabulary_label": "Shared Canvas"
+        }, 
+        "schema": {
+            "@id": "http://schema.org/", 
+            "vocabulary_id": "14", 
+            "vocabulary_label": "Schema.org"
+        }, 
+        "svcs": {
+            "@id": "http://rdfs.org/sioc/ns#", 
+            "vocabulary_id": "13", 
+            "vocabulary_label": "SIOC Services Ontology Module"
+        }, 
+        "time": "http://www.w3.org/2006/time#"
+    }, 
+    "@id": "http://nlw-omeka.digtest.co.uk/api/item_sets/1", 
+    "@type": [
+        "o:ItemSet", 
+        "dctype:InteractiveResource"
+    ], 
+    "crowds:derivedAnnoBodyFormat": "text/plain", 
+    "crowds:derivedAnnoBodyPurpose": {
+        "@id": "http://www.w3.org/ns/oa#tagging", 
+        "o:label": "oa:tagging"
+    }, 
+    "crowds:derivedAnnoBodyType": "text/plain", 
+    "crowds:derivedAnnoCombine": "True", 
+    "crowds:derivedAnnoExternalize": "False", 
+    "crowds:derivedAnnoHumanReadable": "False", 
+    "crowds:derivedAnnoMotivatedBy": {
+        "@id": "http://www.w3.org/ns/oa#tagging", 
+        "o:label": "oa:tagging"
+    }, 
+    "crowds:derivedAnnoSerialize": "True", 
+    "crowds:uiChoice": "False", 
+    "crowds:uiComponent": "resource", 
+    "crowds:uiGroup": {
+        "@id": "madoc:form", 
+        "o:label": "madoc:form"
+    }, 
+    "crowds:uiHidden": "False", 
+    "crowds:uiMultiple": "False", 
+    "crowds:uiSelectorType": "WholeCanvasSelector", 
+    "dcterms:description": "Includes the title 'Notice of Appeal' and R43 or R44 in the header", 
+    "dcterms:hasPart": [
+        {
+            "@id": "http://nlw-omeka.digtest.co.uk/api/items/10", 
+            "@type": [
+                "o:Item", 
+                "dctype:InteractiveResource"
+            ], 
+            "crowds:derivedAnnoBodyFormat": "text/plain", 
+            "crowds:derivedAnnoBodyPurpose": {
+                "@id": "http://www.w3.org/ns/oa#identifying", 
+                "o:label": "oa:identifying"
+            }, 
+            "crowds:derivedAnnoBodyType": "text/plain", 
+            "crowds:derivedAnnoMotivatedBy": {
+                "@id": "http://www.w3.org/ns/oa#tagging", 
+                "o:label": "oa:tagging"
+            }, 
+            "crowds:uiFormGroup": "Case", 
+            "crowds:uiHidden": "False", 
+            "crowds:uiInputOptions": [
+                "Aberaeron Borough/Urban District", 
+                "Aberaeron Rural District", 
+                "Aberystwyth Borough/Urban District", 
+                "Aberystwyth Rural District", 
+                "Cardigan Borough/Urban District", 
+                "Cardigan Rural District", 
+                "Lampeter Borough/Urban District", 
+                "Lampeter Rural District", 
+                "Llandysul Rural District", 
+                "New Quay District", 
+                "Tregaron District", 
+                "Cardiganshire/Cardigan County", 
+                "Unknown"
+            ], 
+            "crowds:uiInputType": {
+                "@id": "madoc:dropdown", 
+                "o:label": "madoc:dropdown"
+            }, 
+            "crowds:uiSelectorType": "WholeCanvasSelector", 
+            "dcterms:conformsTo": {
+                "@id": "http://schema.org/AdministrativeArea", 
+                "o:label": "schema:AdministrativeArea"
+            }, 
+            "dcterms:identifier": "10", 
+            "dcterms:title": "Local Tribunal", 
+            "dcterms:type": {
+                "@id": "http://www.digirati.com/ns/madoc#element", 
+                "o:label": "madoc:element"
+            }, 
+            "o:id": "10", 
+            "o:is_public": "true", 
+            "o:modified": {
+                "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                "@value": "2017-06-28T09:21:30+00:00"
+            }, 
+            "o:owner": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                "o:id": "3"
+            }, 
+            "o:resource_class": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                "o:id": "27"
+            }, 
+            "o:resource_template": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                "o:id": "4"
+            }, 
+            "rdfs:label": "Name of Local Tribunal ", 
+            "rdfs:range": {
+                "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
+                "o:label": "rdfs:literal"
+            }
+        }, 
+        {
+            "@id": "http://nlw-omeka.digtest.co.uk/api/items/11", 
+            "@type": [
+                "o:Item", 
+                "dctype:InteractiveResource"
+            ], 
+            "crowds:derivedAnnoBodyFormat": "text/plain", 
+            "crowds:derivedAnnoBodyPurpose": {
+                "@id": "http://www.w3.org/ns/oa#identifying", 
+                "o:label": "oa:identifying"
+            }, 
+            "crowds:derivedAnnoBodyType": "text/plain", 
+            "crowds:derivedAnnoMotivatedBy": {
+                "@id": "http://www.w3.org/ns/oa#tagging", 
+                "o:label": "oa:tagging"
+            }, 
+            "crowds:uiFormGroup": "Case", 
+            "crowds:uiHidden": "False", 
+            "crowds:uiInputType": {
+                "@id": "madoc:textbox", 
+                "o:label": "madoc:textbox"
+            }, 
+            "crowds:uiSelectorType": "WholeCanvasSelector", 
+            "dcterms:conformsTo": {
+                "@id": "http://purl.org/dc/terms/identifier", 
+                "o:label": "dcterms:identifier"
+            }, 
+            "dcterms:identifier": "11", 
+            "dcterms:title": "Number of Case", 
+            "dcterms:type": {
+                "@id": "http://www.digirati.com/ns/madoc#element", 
+                "o:label": "madoc:element"
+            }, 
+            "o:id": "11", 
+            "o:is_public": "true", 
+            "o:modified": {
+                "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                "@value": "2017-06-28T09:21:30+00:00"
+            }, 
+            "o:owner": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                "o:id": "3"
+            }, 
+            "o:resource_class": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                "o:id": "27"
+            }, 
+            "o:resource_template": {
+                "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                "o:id": "4"
+            }, 
+            "rdfs:label": "Number of Case", 
+            "rdfs:range": {
+                "@id": "http://www.w3.org/2001/XMLSchema#integer", 
+                "o:label": "xsd:integer"
+            }
+        }
+    ], 
+    "dcterms:identifier": "1", 
+    "dcterms:title": "Page 1", 
+    "dcterms:type": {
+        "@id": "http://www.digirati.com/ns/madoc#group", 
+        "o:label": "madoc:group"
+    }, 
+    "o:id": "1", 
+    "o:is_public": "true", 
+    "o:modified": {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+        "@value": "2017-06-28T09:21:30+00:00"
+    }, 
+    "o:owner": {
+        "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+        "o:id": "3"
+    }, 
+    "o:resource_class": {
+        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+        "o:id": "27"
+    }, 
+    "o:resource_template": {
+        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/5", 
+        "o:id": "5"
+    }, 
+    "rdfs:label": "Page 1"
+}

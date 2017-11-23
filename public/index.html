@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>annotation-application</title>
+    <meta name="description" content="">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp-jVRfkWWvxqOFm2k-75qlFePh1oT3Ig&libraries=places"></script>
+    <link href="https://nlw-omeka.digtest.co.uk/application/asset/css/iconfonts.css" media="screen" rel="stylesheet"
+          type="text/css">
+    <link href="https://nlw-omeka.digtest.co.uk/themes/livingstone-evans/asset/css/styles.css" media="screen"
+          rel="stylesheet" type="text/css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<header class="c-header">
+    <div class="c-header__logo">
+        <div class="c-logo c-logo--nlw">
+            <a class="c-logo__link" href="/s/site-one">
+                <div class="c-logo__text">Livingstone Evans</div>
+            </a>
+        </div>
+        <p class="c-header__site-name">Livingstone Evans Photography</p>    </div>
+
+    <div class="c-header__search-and-user">
+        <div class="c-user-menu">
+            <ul class="c-user-menu__list">
+
+
+                <li class="c-user-menu__item">
+                    <a href="/s/site-one/profile">Hannah Nicholas</a>
+                </li>
+                <li class="c-user-menu__item">
+                    <a href="/s/site-one/logout">Logout</a>
+                </li>
+
+
+            </ul>
+        </div>
+        <div class="form-search form-search--sm">
+
+            <form action="/s/site-one/item">
+                <div class="form-field form-field--with-button">
+                    <label for="property[0][in][]"
+                           class="form-field__label sr-only">Search the collection</label>
+                    <input type="text" name="property[0][in][]" id="property[0][in][]"
+                           placeholder="Search the collection"
+                           class="form-field__input form-field__search" value="">
+                    <button class="form-field__button form-field__input" type="submit"
+                            title="Search">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
+<div data-behaviour="annotation-studio-core" data-manifest="https://damsssl.llgc.org.uk/iiif/2.0/4064120/manifest.json" data-canvas="https://damsssl.llgc.org.uk/iiif/2.0/4064120/canvas/4064121.json" data-elucidate-server="https://annotation-dev.digtest.co.uk/annotation/w3c/" data-target="canvas"></div>
+
+<div class="main">
+    <div class="main__inner">
+        <div class="c-dig-grid__container">
+            <br/>
+            <div class="c-dig-grid__col--8">
+                <div data-behaviour="annotation-studio-viewer" data-width="3614" data-height="5611" data-viewer="OpenSeadragonViewer" data-toggleable="true" data-show-controls="true">
+                <div class="annotation-studio-ghost">
+                    <img src="https://damsssl.llgc.org.uk/iiif/2.0/image/4064121/full/256,/0/default.jpg" alt=""/>
+                </div>
+            </div>
+            </div>
+            <div class="c-dig-grid__col--4" style="overflow:visible">
+                <div data-behaviour="annotation-studio-resource-editor" data-resource-templates="https://df6e60a8.ngrok.io/ww1_revised2.json" data-enable-publishing="false" data-canvas=https://damsssl.llgc.org.uk/iiif/2.0/4064120/canvas/4064121.json">
+                    <div class="annotation-studio-ghost-panel">
+                        <div class="ghost-title annotation-studio-animated-background"></div>
+                        <div class="ghost-choice">
+                            <div class="ghost-line annotation-studio-animated-background"></div>
+                            <div class="ghost-line annotation-studio-animated-background"></div>
+                        </div>
+                        <div class="ghost-choice">
+                            <div class="ghost-line annotation-studio-animated-background"></div>
+                            <div class="ghost-line annotation-studio-animated-background"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div data-behaviour="annotation-studio-drafts" data-filter-by="memory,localStorage" data-label="Your annotations" data-description="These are stored on your computer, only you can see these annotations" data-hide-if-empty="true"></div>-->
+                <!-- <div 
+                    data-behaviour="annotation-studio-drafts" 
+                    data-filter-by="elucidate" 
+                    data-label="Saved as works in progress" 
+                    data-description="These are annotations created by the community and may need extra work to complete." 
+                    data-hide-if-empty="true"
+                ></div> -->
+
+            </div>
+            <div class="c-dig-grid__col--12">
+                    <div 
+                    data-behaviour="annotation-studio-drafts" 
+                    data-filter-by="elucidate" 
+                    data-label="Saved as works in progress" 
+                    data-description="These are annotations created by the community and may need extra work to complete." 
+                    data-hide-if-empty="true"
+                    data-show-thumbnail="true"
+                    data-thumbnail-size="150"
+                ></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/index.bundle.js"></script><script type="text/javascript" src="/vendor-d4e9eb.js"></script><script type="text/javascript" src="/index.bundle.js"></script></body>
+</html>
