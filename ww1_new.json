@@ -8157,6 +8157,7 @@
                         "@id": "http://purl.org/dc/terms/description", 
                         "o:label": "dcterms:description"
                     }, 
+                    "dcterms:description": "Please describe the contents of this document", 
                     "dcterms:identifier": "171", 
                     "dcterms:title": "Description", 
                     "dcterms:type": {
@@ -8195,6 +8196,192 @@
                     ], 
                     "crowds:derivedAnnoBodyFormat": "text/plain", 
                     "crowds:derivedAnnoBodyPurpose": {
+                        "@id": "http://www.w3.org/ns/oa#describing", 
+                        "o:label": "oa:describing"
+                    }, 
+                    "crowds:derivedAnnoBodyType": "text/plain", 
+                    "crowds:derivedAnnoMotivatedBy": {
+                        "@id": "http://www.w3.org/ns/oa#tagging", 
+                        "o:label": "oa:tagging"
+                    }, 
+                    "crowds:uiHidden": "False", 
+                    "crowds:uiInputType": {
+                        "@id": "madoc:textarea", 
+                        "o:label": "madoc:textarea"
+                    }, 
+                    "crowds:uiSelectorType": "WholeCanvasSelector", 
+                    "dcterms:conformsTo": {
+                        "@id": "http://ndl.go.jp/dcndl/terms/transcription", 
+                        "o:label": "dcndl:transcription"
+                    }, 
+                    "dcterms:description": "Please transcribe as much as you can of this document", 
+                    "dcterms:identifier": "172", 
+                    "dcterms:title": "Transcription", 
+                    "dcterms:type": {
+                        "@id": "http://www.digirati.com/ns/madoc#element", 
+                        "o:label": "madoc:element"
+                    }, 
+                    "o:id": "172", 
+                    "o:is_public": "true", 
+                    "o:modified": {
+                        "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                        "@value": "2017-06-28T09:21:30+00:00"
+                    }, 
+                    "o:owner": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                        "o:id": "3"
+                    }, 
+                    "o:resource_class": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                        "o:id": "27"
+                    }, 
+                    "o:resource_template": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                        "o:id": "4"
+                    }, 
+                    "rdfs:label": "Transcription", 
+                    "rdfs:range": {
+                        "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
+                        "o:label": "rdfs:literal"
+                    }
+                }, 
+                {
+                    "@id": "http://nlw-omeka.digtest.co.uk/api/items/172", 
+                    "@type": [
+                        "o:Item", 
+                        "dctype:InteractiveResource"
+                    ], 
+                    "crowds:derivedAnnoBodyFormat": "text/plain", 
+                    "crowds:derivedAnnoBodyPurpose": {
+                        "@id": "http://www.w3.org/ns/oa#identifying", 
+                        "o:label": "oa:identifying"
+                    }, 
+                    "crowds:derivedAnnoBodyType": "text/plain", 
+                    "crowds:derivedAnnoMotivatedBy": {
+                        "@id": "http://www.w3.org/ns/oa#tagging", 
+                        "o:label": "oa:tagging"
+                    }, 
+                    "crowds:uiHidden": "False", 
+                    "crowds:uiInputOptions": [
+                        "Aberaeron Borough/Urban District", 
+                        "Aberaeron Rural District", 
+                        "Aberystwyth Borough/Urban District", 
+                        "Aberystwyth Rural District", 
+                        "Cardigan Borough/Urban District", 
+                        "Cardigan Rural District", 
+                        "Lampeter Borough/Urban District", 
+                        "Lampeter Rural District", 
+                        "Llandysul Rural District", 
+                        "New Quay District", 
+                        "Tregaron District", 
+                        "Cardiganshire/Cardigan County", 
+                        "Unknown"
+                    ], 
+                    "crowds:uiInputType": {
+                        "@id": "madoc:dropdown", 
+                        "o:label": "madoc:dropdown"
+                    }, 
+                    "crowds:uiSelectorType": "WholeCanvasSelector", 
+                    "dcterms:conformsTo": {
+                        "@id": "http://schema.org/AdministrativeArea", 
+                        "o:label": "schema:AdministrativeArea"
+                    }, 
+                    "dcterms:description": "If the name of Local Tribunal is known, please include the details here", 
+                    "dcterms:identifier": "172", 
+                    "dcterms:title": "Name of Tribunal ", 
+                    "dcterms:type": {
+                        "@id": "http://www.digirati.com/ns/madoc#element", 
+                        "o:label": "madoc:element"
+                    }, 
+                    "o:id": "172", 
+                    "o:is_public": "true", 
+                    "o:modified": {
+                        "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                        "@value": "2017-06-28T09:21:30+00:00"
+                    }, 
+                    "o:owner": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                        "o:id": "3"
+                    }, 
+                    "o:resource_class": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                        "o:id": "27"
+                    }, 
+                    "o:resource_template": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                        "o:id": "4"
+                    }, 
+                    "rdfs:label": "Name of Tribunal ", 
+                    "rdfs:range": {
+                        "@id": "http://www.w3.org/2000/01/rdf-schema#literal", 
+                        "o:label": "rdfs:literal"
+                    }
+                }, 
+                {
+                    "@id": "http://nlw-omeka.digtest.co.uk/api/items/174", 
+                    "@type": [
+                        "o:Item", 
+                        "dctype:InteractiveResource"
+                    ], 
+                    "crowds:derivedAnnoBodyFormat": "text/plain", 
+                    "crowds:derivedAnnoBodyPurpose": {
+                        "@id": "http://www.w3.org/ns/oa#identifying", 
+                        "o:label": "oa:identifying"
+                    }, 
+                    "crowds:derivedAnnoBodyType": "text/plain", 
+                    "crowds:derivedAnnoMotivatedBy": {
+                        "@id": "http://www.w3.org/ns/oa#tagging", 
+                        "o:label": "oa:tagging"
+                    }, 
+                    "crowds:uiHidden": "False", 
+                    "crowds:uiInputType": {
+                        "@id": "madoc:textbox", 
+                        "o:label": "madoc:textbox"
+                    }, 
+                    "crowds:uiSelectorType": "WholeCanvasSelector", 
+                    "dcterms:conformsTo": {
+                        "@id": "http://purl.org/dc/terms/identifier", 
+                        "o:label": "dcterms:identifier"
+                    }, 
+                    "dcterms:description": "If the case number is known, please include the details here", 
+                    "dcterms:identifier": "174", 
+                    "dcterms:title": "Number of Case", 
+                    "dcterms:type": {
+                        "@id": "http://www.digirati.com/ns/madoc#element", 
+                        "o:label": "madoc:element"
+                    }, 
+                    "o:id": "174", 
+                    "o:is_public": "true", 
+                    "o:modified": {
+                        "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
+                        "@value": "2017-06-28T09:21:30+00:00"
+                    }, 
+                    "o:owner": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/users/3", 
+                        "o:id": "3"
+                    }, 
+                    "o:resource_class": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_classes/27", 
+                        "o:id": "27"
+                    }, 
+                    "o:resource_template": {
+                        "@id": "http://nlw-omeka.digtest.co.uk/api/resource_templates/4", 
+                        "o:id": "4"
+                    }, 
+                    "rdfs:label": "Number of Case", 
+                    "rdfs:range": {
+                        "@id": "http://www.w3.org/2001/XMLSchema#integer", 
+                        "o:label": "xsd:integer"
+                    }
+                }, 
+                {
+                    "@id": "http://nlw-omeka.digtest.co.uk/api/items/175", 
+                    "@type": [
+                        "o:Item", 
+                        "dctype:InteractiveResource"
+                    ], 
+                    "crowds:derivedAnnoBodyFormat": "text/plain", 
+                    "crowds:derivedAnnoBodyPurpose": {
                         "@id": "http://www.w3.org/ns/oa#identifying", 
                         "o:label": "oa:identifying"
                     }, 
@@ -8214,13 +8401,13 @@
                         "@id": "http://purl.org/dc/terms/identifier", 
                         "o:label": "dcterms:identifier"
                     }, 
-                    "dcterms:identifier": "172", 
+                    "dcterms:identifier": "175", 
                     "dcterms:title": "Tag", 
                     "dcterms:type": {
                         "@id": "http://www.digirati.com/ns/madoc#element", 
                         "o:label": "madoc:element"
                     }, 
-                    "o:id": "172", 
+                    "o:id": "175", 
                     "o:is_public": "true", 
                     "o:modified": {
                         "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
