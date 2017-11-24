@@ -8246,7 +8246,7 @@
                     }
                 }, 
                 {
-                    "@id": "http://nlw-omeka.digtest.co.uk/api/items/172", 
+                    "@id": "http://nlw-omeka.digtest.co.uk/api/items/173", 
                     "@type": [
                         "o:Item", 
                         "dctype:InteractiveResource"
@@ -8287,13 +8287,13 @@
                         "o:label": "schema:AdministrativeArea"
                     }, 
                     "dcterms:description": "If the name of Local Tribunal is known, please include the details here", 
-                    "dcterms:identifier": "172", 
+                    "dcterms:identifier": "173", 
                     "dcterms:title": "Name of Tribunal ", 
                     "dcterms:type": {
                         "@id": "http://www.digirati.com/ns/madoc#element", 
                         "o:label": "madoc:element"
                     }, 
-                    "o:id": "172", 
+                    "o:id": "173", 
                     "o:is_public": "true", 
                     "o:modified": {
                         "@type": "http://www.w3.org/2001/XMLSchema#dateTime", 
