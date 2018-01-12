@@ -7,16 +7,15 @@ import argparse
 from pyld import jsonld
 from operator import itemgetter
 
-
 import unicodecsv as csv
 
 # global context document
 with open('context.json', 'r') as context_file:
     master_context = json.load(context_file)
-    del(master_context['@context']['dct'])  # remove unwanted alternative dcterms 'dct' prefix
-    del(master_context['@context']['dcterm'])  # unwanted alternative dcterms 'dcterm' prefix
-    del(master_context['@context']['sdo'])  # unwanted alternative schema.org prefix
-    del(master_context['@context']['sorg'])  # unwanted alternative schema.org prefix
+    del (master_context['@context']['dct'])  # remove unwanted alternative dcterms 'dct' prefix
+    del (master_context['@context']['dcterm'])  # unwanted alternative dcterms 'dcterm' prefix
+    del (master_context['@context']['sdo'])  # unwanted alternative schema.org prefix
+    del (master_context['@context']['sorg'])  # unwanted alternative schema.org prefix
 
 
 def initialise():
@@ -65,10 +64,10 @@ def parse_field(field_key, field_value, r_list):
     based on the o:id, @id and o:label, in that order.
 
     Return None, None for fields that don't fit this pattern.
-    :param field_value:
-    :param field_key:
-    :param r_list:
-    :return:
+    :param field_value: value for field
+    :param field_key: key for field
+    :param r_list: row list
+    :return: key, value
     """
     # if field_key == u'o:id':
     #     return 'dcterms:identifier', field_value  # don't try to compact @ids
@@ -95,18 +94,18 @@ def parse_field(field_key, field_value, r_list):
 def parse_expanded(model, row_list):
     """
     Parse and expanded capture model and generate dicts suitable for writing to CSV rows.
+    :param row_list: empty list to append parsed rows to and return
     :param model: expanded JSON-LD
     :return: Python object mapped to CSV row headings
     """
     master_dict = initialise()
     for item in model:
-        for k, v in item.items():
+        for k, v in item.items():  # iterate items in model
             if k and v:
                 parsed_key, parsed_value = parse_field(field_key=k, field_value=v, r_list=row_list)
                 if parsed_key in master_dict.keys():
                     master_dict[parsed_key] = parsed_value
-        print(json.dumps(master_dict, indent=2))
-        #dw.writerow(master_dict)
+        print(json.dumps(master_dict, indent=2))  # print work in progress
         row_list.append(master_dict)
     return row_list
 
@@ -117,8 +116,8 @@ def csv_generate(csv_filename, capturemodel_uri, delimiter='|'):
 
     Example URIs:
 
-    NLW WW1: 'http://nlw-omeka.digtest.co.uk/s/war-tribunal-records/annotation-studio/open/resource'
-    NLW GLE: 'http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource'
+    NLW WW1 (production): 'https://crowd.library.wales/s/war-tribunal-records/annotation-studio/open/resource'
+    NLW GLE (dev): 'http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource'
     IDA: https://omeka.dlcs-ida.org/s/ida/annotation-studio/open/tagging
 
     :param csv_filename: output filename
@@ -140,7 +139,6 @@ def csv_generate(csv_filename, capturemodel_uri, delimiter='|'):
             dw.writerow(d)
 
 
-
 def main():
     """
     Wrapper for csv_generate.
@@ -151,7 +149,9 @@ def main():
     JSON --> CSV
     Usage:
 
-    python gen_csv -i http://nlw-omeka.digtest.co.uk/s/site-one/annotation-studio/open/resource -o gle_export.csv
+   python gen_csv.py -i https://crowd.library.wales/s/war-tribunal-records/annotation-studio/open/resource \
+    -o exported_crowd_library_wales.csv
+
     """
     logging.basicConfig(filename='csv_generator.log', level=logging.DEBUG)
     parser = argparse.ArgumentParser(description='Simple JSON to CSV tool for annotation studio capture models.')
