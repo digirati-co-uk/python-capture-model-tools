@@ -346,15 +346,15 @@ def main():
 
     Write JSON.
 
-    For example:
+    To generate the WW1 capture model, as JSON:
 
-        python gen_json.py -i monkeys.csv -o monkeys.json -b http://www.example.com/monkeys
+        (defaults are currently set to the values on crowd.library.wales)
 
-    Or, to generate the WW1 capture model, as JSON:
+        Simple: python gen_json.py -i exported_crowd_library_wales.csv -o ww1_crowd_wales.json
 
-        python gen_json.py -i ww1.csv -o ww1.json -b http://nlw-omeka.digtest.co.uk -t 2 -c 27 -g 5 -e 4 -u 3
+        Advanced: Gwilym Livingston Evans, for the NLW _dev_ site:
 
-        python gen_json.py -i gle.csv -o gle.json -u 2 -t 1 -c 27 -g 5 -e 4 -u 3
+        python gen_json.py -i gle.csv -o gle.json -b https://nlw-omeka.digtest.co.uk -u 2 -t 1 -c 27 -g 5 -e 4 -u 3
 
     IDA model:
 
@@ -375,17 +375,19 @@ def main():
     parser.add_argument('-x', '--context', help='IDA Context', required=False)
     args = parser.parse_args()
     if not args.url_base:
-        args.url_base = 'http://nlw-omeka.digtest.co.uk'
+        args.url_base = 'https://crowd.library.wales'
     if not args.irclass:
-        args.irclass = 27
+        args.irclass = str(27)
     if not args.group_id:
-        args.group_id = 5
+        args.group_id = str(5)
     if not args.element_id:
-        args.element_id = 4
+        args.element_id = str(4)
     if not args.user:
-        args.user = 2
+        args.user = str(2)
     if not args.context:
-        args.conext = False
+        args.context = False
+    if not args.top_index:
+        args.top_index = str(1)
     if args.top_index:
         js = csv_load(csv_file=args.input, url_base=args.url_base, top_index=args.top_index, group=args.group_id,
                       element=args.element_id, irclass=args.irclass, user=args.user, ida_context=args.context)
