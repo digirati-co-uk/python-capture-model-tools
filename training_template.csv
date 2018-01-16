@@ -1,0 +1,8 @@
+dcterms:identifier|dcterms:type|dcterms:hasPart|dcterms:title|rdfs:label|dcterms:description|dcterms:conformsTo|rdfs:range|crowds:derivedAnnoBodyFormat|crowds:derivedAnnoBodyLabelParts|crowds:derivedAnnoBodyPurpose|crowds:derivedAnnoBodyType|crowds:derivedAnnoCombine|crowds:derivedAnnoExternalize|crowds:derivedAnnoHumanReadable|crowds:derivedAnnoMotivatedBy|crowds:derivedAnnoSerialize|crowds:externalResourceModel|crowds:uiChoice|crowds:uiComponent|crowds:uiFormGroup|crowds:uiGroup|crowds:uiHidden|crowds:uiInputDefaultValue|crowds:uiInputOptions|crowds:uiInputType|crowds:uiMultiple|crowds:uiRequired|crowds:uiSelectorType|crowds:uiSelectorValue
+6|madoc:element||Element 1|Element 1|Description 1|https://schema.org/name||text/plain||oa:identifying|oa:TextualBody||||oa:tagging||||||||||madoc:textarea||||
+5|madoc:element||Element 2|Element 2|Description 2|https://schema.org/name||text/plain||oa:identifying|oa:TextualBody||||||||||||||madoc:textbox||||
+4|madoc:element||Element 3|Element 3|Description 3|https://schema.org/name||text/plain||oa:identifying|oa:TextualBody||||oa:tagging||||||||||madoc:datepicker||||
+3|madoc:group|4;5;7|Choice 1|Choice 1|Capture model group|https://schema.org/name||||||True|False|False||True||False|resource||madoc:form|||||True||madoc:boxdraw|
+2|madoc:group|6|Choice 2|Choice 1|Capture model group|||||||True|False|False||True||False|resource||madoc:form|||||False||WholeCanvasSelector|
+1|madoc:group|2;3|Top Level Choice|Describe this photograph|Capture model group|||||||True|False|False||True||True|resource||madoc:form|||||True||WholeCanvasSelector|
+7|madoc:element||Element 4|Element 4|Description 4|https://schema.org/name||text/plain||oa:identifying|oa:TextualBody||||oa:tagging||||||||||madoc:textbox||||
