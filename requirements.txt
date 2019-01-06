@@ -14,7 +14,7 @@ pyaml==16.12.2
 pyfiglet==0.7.5
 PyLD==0.7.2
 pyparsing==2.2.0
-PyYAML==3.12
+pyyaml>=4.2b1
 rdflib==4.2.2
 rdflib-jsonld==0.4.0
 requests==2.14.2
