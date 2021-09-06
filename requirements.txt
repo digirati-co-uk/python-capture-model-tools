@@ -4,7 +4,7 @@ colorama==0.3.9
 docopt==0.6.2
 isodate==0.5.4
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 json2yaml==1.1.1
 MarkupSafe==1.0
 ontospy==1.8.6
@@ -19,7 +19,7 @@ rdflib-jsonld==0.4.0
 six==1.10.0
 SPARQLWrapper==1.8.0
 unicodecsv==0.14.1
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 flask>=0.12.3
 requests>=2.20.0
 
