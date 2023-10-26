@@ -19,7 +19,7 @@ rdflib-jsonld==0.4.0
 six==1.10.0
 SPARQLWrapper==1.8.0
 unicodecsv==0.14.1
-Werkzeug==0.12.2
+Werkzeug==3.0.1
 flask>=0.12.3
 requests>=2.20.0
 
